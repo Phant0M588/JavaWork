@@ -2,6 +2,7 @@ void main()
 {
 
     Scanner in = new Scanner (System.in);
+    System.out.print("Введите размер массива: ");
     int q = in.nextInt();
     int[][] mass = new int [q][q];
     int[] mas = new int [q];
@@ -9,6 +10,7 @@ void main()
     {
         for(int j = 0; j < q; j++)
         {
+            System.out.printf("Введите целое число в клетку %dx%d: ", i+1, j+1);
             int w = in.nextInt();
             mass[i][j] = w;
         }
@@ -30,6 +32,7 @@ void main()
         mas[pos] = mas[i];
         mas[i] = min;
     }
+    System.out.print("Порядок отсортированной диаганали: ");
     for(int i = 0; i < q; i++)
     {
         System.out.print(mas[i] + " ");
