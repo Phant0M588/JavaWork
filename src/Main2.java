@@ -15,5 +15,5 @@ void main()
     {
         v+= nn[i];
     }
-    System.out.println(v);
+    System.out.print("Значение: " + v);
 }
