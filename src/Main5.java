@@ -31,7 +31,3 @@ class Rab
     int b;
     int y;
 }
-
-//1) y=3x+5
-//2) y=(a+b)/(a-b)
-//3) y=(ax/b)!
