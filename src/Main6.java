@@ -1,43 +1,19 @@
 void main()
 {
-    Reader ch1 = new Reader();
-    Reader ch2 = new Reader();
-    Reader ch3 = new Reader();
-    Reader ch4 = new Reader();
-    Reader ch5 = new Reader();
+    Scanner in = new Scanner(System.in);
+    Reader[] ch = new Reader[5];
+    for(int i = 0; i < ch.length; i++)
+    {
+        ch[i].name = in.next();
+        ch[i].bilet = in.nextInt();
+        ch[i].facul = in.next();
+        ch[i].data = in.next();
+        ch[i].teleth = in.nextInt();
 
-    Scanner in = new Scanner (System.in);
-    ch1.name = in.next();
-    ch1.bilet = in.nextInt();
-    ch1.facul = in.next();
-    ch1.data = in.next();
-    ch1.teleth = in.nextInt();
+    }
 
-    ch2.name = in.next();
-    ch2.bilet = in.nextInt();
-    ch2.facul = in.next();
-    ch2.data = in.next();
-    ch2.teleth = in.nextInt();
 
-    ch3.name = in.next();
-    ch3.bilet = in.nextInt();
-    ch3.facul = in.next();
-    ch3.data = in.next();
-    ch3.teleth = in.nextInt();
-
-    ch4.name = in.next();
-    ch4.bilet = in.nextInt();
-    ch4.facul = in.next();
-    ch4.data = in.next();
-    ch4.teleth = in.nextInt();
-
-    ch5.name = in.next();
-    ch5.bilet = in.nextInt();
-    ch5.facul = in.next();
-    ch5.data = in.next();
-    ch5.teleth = in.nextInt();
-
-    String Name[] = {ch1.name, ch2.name, ch3.name, ch4.name, ch5.name};
+    String Name[] = {ch[1].name, ch[2].name, ch[3].name, ch[4].name, ch[5].name};
 
     for (int i = 0; i < 5; i++)
     {
@@ -73,11 +49,17 @@ void main()
 
 class Reader
 {
-    String name;
-    int bilet;
-    String facul;
-    String data;
-    int teleth;
+    String name, facul, data;
+    int bilet, teleth;
+    Reader(String name, int bilet, String facul, String data, int teleth)
+    {
+        this.name = name;
+        this.bilet = bilet;
+        this.facul = facul;
+        this.data = data;
+        this.teleth = teleth;
+    }
+
 }
 
 void TakeBook(int kol, String Nname)
