@@ -1,44 +1,44 @@
 void main()
 {
-    String name = "Артём", surname = "Колобов", age = "20.02.2002",
+    String name = "Артём", name2 = "Колобов", age = "20.02.2002",
             mark = "Lada",
             bookname = "Автопром", author = "Бычков";
     int carReal = 2001, vol = 20, bookReal = 1996;
-    Person per = new Person(name, surname, age);
-    PersonCar car = new PersonCar(mark, carReal, vol);
+    Chel per = new Chel(name, name2, age);
+    Car car = new Car(mark, carReal, vol);
 
     Book book = new Book(bookname, author, bookReal);
 
-    per.returnPerson();
+    per.returnChel();
     car.returnCar();
     book.returnBook();
     per.takeAllClass(car,book);
 }
 
-class Person
+class Chel
 {
-    String name, surname, birtDay;
+    String name, name2, birtDay;
 
-    Person(String name, String surname, String age)
+    Chel(String name, String name2, String age)
     {
         this.name = name;
-        this.surname = surname;
+        this.name2 = name2;
         this.birtDay = age;
     }
-    void returnPerson()
+    void returnChel()
     {
-        System.out.println("Имя: " + name + "\tФамилия: " + surname + "\tДата рождения: " + birtDay);
+        System.out.println("Имя: " + name + "\tФамилия: " + name2 + "\tДата рождения: " + birtDay);
     }
-    void takeAllClass(PersonCar car, Book book)
+    void takeAllClass(Car car, Book book)
     {
-        System.out.println(this.name + " " + this.surname+ " читает книгу '"+ book.bookName + "' про машину " + car.mark);
+        System.out.println(this.name + " " + this.name2 + " читает книгу '"+ book.bookName + "' про машину " + car.mark);
     }
 }
-class PersonCar
+class Car
 {
     String mark;
     int volume, yearRelease;
-    PersonCar(String mark, int yearRelease, int volume)
+    Car(String mark, int yearRelease, int volume)
     {
         this.mark = mark;
         this.yearRelease = yearRelease;
