@@ -1,8 +1,8 @@
 void main()
 {
-    String name = "Иван", surname = "Петрович", age = "21.2.2001",
-            mark = "A631",
-            bookname = "Механика", author = "Крылов";
+    String name = "Артём", surname = "Колобов", age = "20.02.2002",
+            mark = "Lada",
+            bookname = "Автопром", author = "Бычков";
     int carReal = 2001, vol = 20, bookReal = 1996;
     Person per = new Person(name, surname, age);
     PersonCar car = new PersonCar(mark, carReal, vol);
