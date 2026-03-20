@@ -6,7 +6,7 @@ void main()
     System.out.println("Введите x");
     double x = scan.nextDouble();
     double v = 0;
-    if(Math.abs(x)<1){
+    if(Math.abs(x) <= 1){
         for (int i = 0; i < n; i++)
         {
             v += (Math.pow(-1, i) * Math.pow(x,2*i+1) / (2*i+1));
