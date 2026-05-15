@@ -1,18 +1,18 @@
 void main()
 {
-    String name = "Артём", name2 = "Колобов", age = "20.02.2002",
+    String name = "Артём", name2 = "Колобов", grod = "20.02.2002",
             mark = "Lada",
             bookname = "Автопром", author = "Бычков";
     int carReal = 2001, vol = 20, bookReal = 1996;
-    Chel per = new Chel(name, name2, age);
-    Car car = new Car(mark, carReal, vol);
 
+    Chel chel = new Chel(name, name2, grod);
+    Car car = new Car(mark, carReal, vol);
     Book book = new Book(bookname, author, bookReal);
 
-    per.returnChel();
+    chel.returnChel();
     car.returnCar();
     book.returnBook();
-    per.takeAllClass(car,book);
+    chel.takeAllClass(car, book);
 }
 
 class Chel

@@ -1,93 +1,46 @@
-void main()
-{
-    Scanner in = new Scanner(System.in);
-    Reader[] ch = new Reader[5];
-    for(int i = 0; i < ch.length; i++)
-    {
-        ch[i].name = in.next();
-        ch[i].bilet = in.nextInt();
-        ch[i].facul = in.next();
-        ch[i].data = in.next();
-        ch[i].teleth = in.nextInt();
+void main() {
+    Reader libery = new Reader("FF.", "312", "ВАА", "25.12.2001", "8992543151");
 
-    }
-
-
-    String Name[] = {ch[1].name, ch[2].name, ch[3].name, ch[4].name, ch[5].name};
-
-    for (int i = 0; i < 5; i++)
-    {
-        String Nname = Name[i];
-        int kol = in.nextInt();
-        TakeBook(kol, Nname);
-        String[] Liberal = new String[kol];
-        for (int j = 0; j < kol; j++)
-        {
-            Liberal[j] = in.next();
-        }
-        TakeBook(Liberal, Nname);
-    }
-
-    for (int i = 0; i < 5; i++)
-    {
-        String Nname = Name[i];
-        int kol = in.nextInt();
-        ReturnBook(kol, Nname);
-        String[] Liberal = new String[kol];
-        for (int j = 0; j < kol; j++)
-        {
-            Liberal[j] = in.next();
-        }
-        ReturnBook(Liberal, Nname);
-    }
+    libery.takeBook(5);
+    libery.takeBook("Новая литература", "Словарь", "Пересказы", "Конспекты", "История");
+    libery.returnBook(2);
+    libery.returnBook("Пересказы", "Словарь");
 }
 
+class Reader {
+    String name, number, facultet, data, phoneNumber;
 
-
-
-
-
-class Reader
-{
-    String name, facul, data;
-    int bilet, teleth;
-    Reader(String name, int bilet, String facul, String data, int teleth)
-    {
+    Reader(String name, String number, String facultet, String data, String phoneNumber) {
         this.name = name;
-        this.bilet = bilet;
-        this.facul = facul;
         this.data = data;
-        this.teleth = teleth;
+        this.number = number;
+        this.facultet = facultet;
+        this.phoneNumber = phoneNumber;
     }
 
-}
-
-void TakeBook(int kol, String Nname)
-{
-    System.out.printf("%s взял %d книги", Nname, kol);
-}
-
-void TakeBook(String[] Liberal, String Nname)
-{
-    System.out.printf("\n%s взял книги: ", Nname);
-    for (int i = 0; i < Liberal.length; i++)
-    {
-        System.out.println(Liberal[i]);
-        if (i < Liberal.length - 1) System.out.println(" , ");
+    void takeBook(int countBook) {
+        System.out.printf("%s взял %d книги ", name, countBook);
+        System.out.println();
     }
-}
 
-void ReturnBook(int kol, String Nname)
-{
-    System.out.printf("%s отдал %d книги", Nname, kol);
-}
+    void takeBook(String... book) {
+        System.out.printf("%s взял книги: ", name);
+        for (int i = 0; i < book.length; i++) {
+            System.out.print(book[i] + " ");
+        }
+        System.out.println();
+    }
 
-void ReturnBook(String[] Liberal, String Nname)
-{
-    System.out.printf("\n%s отдал книги: ", Nname);
-    for (int i = 0; i < Liberal.length; i++)
-    {
-        System.out.println(Liberal[i]);
-        if (i < Liberal.length - 1) System.out.println(" , ");
+    void returnBook(int countBook) {
+        System.out.printf("%s вернул %d книги ", name, countBook);
+    }
+
+    void returnBook(String... book) {
+        System.out.printf("\n%s отдал книги: ", name);
+        for (int i = 0; i < book.length; i++) {
+            System.out.print(book[i] + " ");
+
+        }
+        System.out.println();
     }
 }
